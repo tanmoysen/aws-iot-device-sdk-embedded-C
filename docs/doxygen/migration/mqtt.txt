@@ -1,10 +1,10 @@
 /**
 @page mqtt_migration MQTT
-@brief How to migrate an MQTT application from v3 to 202009.00.
+@brief How to migrate an MQTT application from AWS IoT Device SDK for Embedded C v3 to 202009.00.
 
-The MQTT library has been refactored in 202009.00 to use only a single thread, and therefore no longer has any thread synchronization dependencies. New features such as persistent session support and QoS 2 publish delivery have also been added.
+The MQTT library has been refactored in version 202009.00 to use only a single thread, so it does not have thread synchronization dependencies. In addition, the MQTT library includes new features such as persistent session support and QoS 2 publish delivery.
 
-The features of the MQTT libraries in v3 and 202009.00 are defined by the common MQTT 3.1.1 spec; therefore, the two versions are similar.
+The features of the MQTT libraries in v3 and 202009.00 are defined by the common MQTT 3.1.1 spec, so the two versions are similar in terms of core features.
 
 @section migration_mqtt_removed Removed features
 @brief The following features were present in v3, but removed in 202009.00:
@@ -14,7 +14,7 @@ The features of the MQTT libraries in v3 and 202009.00 are defined by the common
   the underlying transport connection and then call @ref MQTT_Connect. We recommend that the application employ an exponential backoff strategy when re-establishing connections as explained in
   the [AWS blog for Exponential Back off and Jitter](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/).
 - <u>Thread support</u> <br>
-  Version 3 has an `_ENABLE_THREAD_SUPPORT_` macro for multi-threading use cases. Version 202009.00 does not spawn any threads and therefore, the macro `_ENABLE_THREAD_SUPPORT_` has been removed.
+  Version 3 has an `_ENABLE_THREAD_SUPPORT_` macro for multi-threading use cases. Version 202009.00 does not spawn any threads, so the macro `_ENABLE_THREAD_SUPPORT_` has been removed.
 
 @section migration_mqtt_datatypes Data Types
 @brief The following table lists equivalent data types in v3 and 202009.00.
